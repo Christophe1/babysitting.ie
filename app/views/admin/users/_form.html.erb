@@ -1,0 +1,37 @@
+<%= simple_form_for [:admin, resource], :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email, :required => true %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :provider %>
+  <%= f.input :address, :required => true, :as => :string, :input_html => { :onkeydown=>"if(event.keyCode==13){return false;}" }, :placeholder => I18n.t('helpers.enter_a_location') %>
+  <%= f.hidden_field :lat  %>
+  <%= f.hidden_field :lng  %>
+  <%= f.input :external_user_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), '#', :class => 'btn back' %>
+  </div>
+<% end %>
+
+<script type="text/javascript">   
+
+    function initialize_google_maps() {
+      var input = document.getElementById('user_address');
+      var options = { types: ['geocode'] };
+
+      autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        $('#user_lat').val(place.geometry.location.lat());
+        $('#user_lng').val(place.geometry.location.lng());
+      });
+    }
+
+    $(function() {
+        initialize_google_maps();
+    });
+
+</script>

@@ -1,0 +1,4 @@
+<%= link_to review, :method => :delete, :confirm => I18n.t('helpers.links.confirmation'), :remote => true, :class => 'btn btn-danger delete_review' do %>
+<i class="icon-trash icon-white"></i> 
+<%= I18n.t('user.review.delete') %>
+<% end %>

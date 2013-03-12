@@ -1,0 +1,19 @@
+development:
+  redis: localhost:6379/questionnaire
+  workers: 2
+  queue:
+    - 'facebook'
+    - 'email_invites_reminder'
+
+staging:
+  redis: localhost:6379/questionnaire
+  workers: 2
+  queue:
+    - 'facebook'
+    - 'email_invites_reminder'
+
+production:
+  redis: localhost:6379/questionnaire
+  workers: 5
+  queue: 'facebook'
+

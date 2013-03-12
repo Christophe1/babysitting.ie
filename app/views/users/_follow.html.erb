@@ -1,0 +1,5 @@
+<% if current_user.can_follow?(user) %>
+  <%= link_to I18n.t('helpers.links.follow'), friend_relations_path(:target_user_id => user.id, :stats_user_id => stats_user_id), :method => :post, :remote => true, :class => "btn" %>
+<% else %>
+  <%= link_to I18n.t('helpers.links.follow'), '#', :class => "btn invalid-follow" %>
+<% end %>

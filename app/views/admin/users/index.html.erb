@@ -1,0 +1,40 @@
+<% if collection.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= resource_class.human_attribute_name(:id) %></th>
+        <th><%= resource_class.human_attribute_name(:email) %></th>
+        <th><%= resource_class.human_attribute_name(:provider) %></th>
+        <th><%= resource_class.human_attribute_name(:external_user_id) %></th>
+        <th><%= resource_class.human_attribute_name(:address) %></th>
+        <th><%= resource_class.human_attribute_name(:invites_count) %></th>
+        <th><%= resource_class.human_attribute_name(:created_at) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |item| %>
+        <tr>
+          <td><%= link_to item.id, resource_path(item) %></td>
+          <td><%= item.email %></td>
+          <td><%= item.provider %></td>
+          <td><%= item.external_user_id %></td>
+          <td><%= item.address %></td>
+          <td><%= item.invites_count %></td>
+          <td><%=l item.created_at %></td>
+          <td>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_resource_path(item), :class => 'btn btn-mini' %>
+            <%= link_to t('.view', :default => t("helpers.links.view")), resource_path(item), :class => 'btn btn-mini' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")), resource_path(item, :page => params[:page]), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+ <p><%= t('admin.empty_list') %></p>
+<% end %>
+
+<%= will_paginate(collection) %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")), new_resource_path, :class => 'btn btn-primary' %>

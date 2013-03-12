@@ -1,0 +1,83 @@
+<h2><%= I18n.t('email_invites.invate_by_outlook_popup_header') %></h2>
+<div id="outlook-body">
+  <%= form_tag outlook_import_email_invites_path, :multipart => true, :method => :post do %>
+    <div class="step">
+      <span class="number">1. </span>
+      <%= I18n.t('email_invites.outlook.step1') %><br />
+      <%= link_to I18n.t('email_invites.outlook.step1_link'), "http://office.microsoft.com/en-gb/outlook-help/export-contacts-HA101870639.aspx", :target => "_blank" %>
+    </div>
+    <div class="step">
+      <span class="number">2. </span>
+      <%= label_tag "file", I18n.t('email_invites.outlook.step2') %><br />
+      <%= file_field_tag "file" %>
+      <div id="choosed" class="hide">
+        <span id="file-name"></span>
+        <span id="delete"><a href="#" id="delete-file"><i class="icon-remove"></i><%= I18n.t('helpers.links.destroy') %></a></span>
+        <span id="error" class="color-red hide"><%= I18n.t('email_invites.outlook.incorrect_file_error') %></span>
+      </div>
+    </div>
+    <div class="step">
+      <span class="number">3. </span>
+      <%= I18n.t('email_invites.outlook.step3') %>
+    </div>
+    <div class='buttons'>
+      <div class="pull-left">
+        <%= link_to I18n.t('helpers.links.back'), '#', :class => 'back-link', :id => 'go-back' %>
+      </div>
+      <%= submit_tag I18n.t('email_invites.outlook.import_contacts'), :id => 'file-import', :class => 'btn btn-primary' %>
+      <%= link_to I18n.t('email_invites.invite_cancel'), '#', :class => 'btn modal-popup-close' %>
+    </div>
+  <% end %>
+</div>
+<div id="no-contacts" class="hide">
+  <b><%= t('email_invites.callback_header') %></b>
+  <%= raw t('email_invites.outlook.no_contacts', :link => link_to(t('email_invites.outlook.choose'), '#', :id => 'choose-another')) %>
+  <div class='buttons'>
+    <div class="pull-left">
+      <%= link_to I18n.t('helpers.links.back'), '#', :class => 'back-link', :id => 'go-back' %>
+    </div>
+    <%= link_to I18n.t('email_invites.invite_cancel'), '#', :class => 'btn modal-popup-close' %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#file-import').click(function(e) {
+    e.preventDefault();
+  });
+
+  $('#file').fileupload({
+      dataType: 'script',
+      add: function (e, data) {
+        var types = /(\.|\/)(csv|ms-excel)$/i;
+        var file = data.files[0];
+        $('#file').hide();
+        $('#choosed #file-name').text(file.name);
+        $('#choosed').show();
+
+        $('#file-import').off('click').click(function(e) {
+            e.preventDefault();
+            if (types.test(file.type)) {
+              data.submit();
+            } else {
+              $('#choosed #error').show();
+            }
+        });
+      }
+  });
+
+  $('#delete-file').click(function(){
+    removeFile();
+  });
+
+  $('#choose-another').click(function(){
+    removeFile();
+    $('#no-contacts').hide();
+    $('#outlook-body').show();
+  });
+
+  function removeFile(){
+    $('#choosed #error').hide();
+    $('#choosed').hide();
+    $('#file').show();
+  }
+</script>

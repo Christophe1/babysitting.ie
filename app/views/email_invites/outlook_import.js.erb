@@ -1,0 +1,11 @@
+<% if @contacts %>
+  var contacts = <%= @contacts.html_safe %>;
+  if (contacts.length > 0) {
+    renderInvitationForm(contacts);
+  } else {
+    $('#outlook-body').hide();
+    $('#no-contacts').show();
+  }
+<% else %>
+  $('#choosed #error').show();
+<% end %>

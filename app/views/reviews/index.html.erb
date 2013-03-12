@@ -1,0 +1,60 @@
+<div id='review-page'>
+
+  <div class='review-text'>
+
+    <%= raw I18n.t('write_review.text') %>
+
+  </div>
+
+  <div class='review-form'>
+      <%= simple_form_for(@review) do |f| %>
+          <div class="inputs">
+            <%= f.input :category_ids, :collection => Category.all, :as => :chosen, :prompt => false,
+                             :input_html => {  :multiple => true },
+                             :label => I18n.t('write_review.categories_selector_label') , :placeholder => I18n.t('write_review.categories_selector_placeholder') %>
+            <%= f.input :name, :required => true %>
+            <%= f.input :phone  %>
+
+            <%= f.input :address, :input_html => { :onkeydown=>"if(event.keyCode==13){return false;}" }, :placeholder => '' %>
+
+            <%= f.hidden_field :lat  %>
+            <%= f.hidden_field :lng  %>
+
+            <%= f.input :comment, :label => I18n.t('write_review.comment_label') %>
+            <a class="review-comments-example" href='#'><%= I18n.t('write_review.comment_popup_link_text') %></a>
+          </div>
+
+          <div class="actions">
+            <%= link_to I18n.t('write_review.cancel_button'), landing_page, :class => 'btn' %>
+            <%= f.button :submit, I18n.t('write_review.submit_button'), :class => 'btn btn-primary' %>
+          </div>
+      <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $('.review-comments-example').live('click', function(e) {
+        $.modal('<div class="perfect-review-example"><%= I18n.t('write_review.perfect_example') %></div>', {closeHTML : '<a id="popup_close" href="#"><%= I18n.t('write_review.close_popup_text') %></a>', overlayClose : true})
+    });
+
+    function initialize_google_maps() {
+      var input = document.getElementById('review_address');
+      var options = { types: ['geocode'] };
+
+      autocomplete = new google.maps.places.Autocomplete(input, options);
+
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        $('#review_lat').val(place.geometry.location.lat());
+        $('#review_lng').val(place.geometry.location.lng());
+      });
+
+    }
+
+    $(function() {
+        initialize_google_maps();
+    });
+
+</script>

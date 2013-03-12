@@ -1,0 +1,16 @@
+<div class="film row">
+  <div class="avatar">
+    <%= fb_avatar(film_user.user) %>
+  </div>
+  <div class="body span9">
+    <div class="title">
+      <%= film_review_title(film_user) %> <br />
+      <%= Film.human_attribute_name(:name) %>: <%= film_user.film.name %> <br />
+      <%= time_ago(film_user.updated_at) %>
+    </div>
+    <div class="comments">
+      <%= text_area_to_html(film_user.comments) %>
+    </div>
+    <%= link_button_to(t('helpers.links.add_to_my_page'), duplicate_film_path(film_user), :method => :post, :class => 'btn btn-mini add-to-my-page') unless film_user.user == current_user %>
+  </div>
+</div>

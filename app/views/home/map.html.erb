@@ -1,0 +1,123 @@
+
+
+<div class='map-page'>
+
+  <div class="greetings">
+    <%= I18n.t('map_page.greetings', :user_name => current_user.first_name).html_safe %>
+  </div>
+
+  <div class='address-area'>
+
+    <%= form_for current_user, :url => update_address_path, :html => {:method => :post, :class => 'form-horizontal', :id => 'address_form'} do |f| %>
+      <%= f.text_field :address, :id => 'address_autocomplete' %>
+      <%= f.hidden_field :city %>
+      <%= f.hidden_field :lat  %>
+      <%= f.hidden_field :lng  %>
+
+      <%= hidden_field_tag :changed %>
+    <% end %>
+
+  </div>
+
+  <div id="map_canvas"></div>
+  
+  <div id="info_window" style="display:none">
+
+  <%#= link_to I18n.t('map.next_link'), '#', :class => 'btn', :id => 'map-next-link' %>
+
+  <div class="clearfix"></div>
+
+	<div id = "correct_area">
+	Is this the correct area?
+	</div>
+	
+	<br><br><br>
+
+  <%#= code below deals with the 'Yes' and 'No' links on the infoWindow.
+  They go to the aplication.js file %>
+
+	<div id="no_link">
+ 	<%= link_to I18n.t('map.no_link'), '#', :class => 'map-no-link' %>
+	</div>
+	
+	<div id="yes_link">
+		<%= link_to I18n.t('map.yes_link'), '#', :class => 'map-yes-link' %>
+
+	</div>
+
+</div>
+
+<script type="text/javascript">
+  function initialize_google_maps() {
+
+
+
+    var midOfIreland = new google.maps.LatLng(53.252069, -7.860718);
+    var myOptions = {
+      zoom: 7,
+      center: midOfIreland,
+      mapTypeId: google.maps.MapTypeId.ROADMAP, // ROADMAP, SATELLITE, HYBRID
+      streetViewControl: false
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+    var input = document.getElementById('address_autocomplete');
+    var options = {
+      types: ['geocode']
+    };
+
+   autocomplete = new google.maps.places.Autocomplete(input, options);
+    autocomplete.bindTo('bounds', map);
+    
+    var contentstring = $('#info_window').html();
+    
+ <%#   var myOptions = {content:'<div id="No_link"><a href=http://www.rosk.com>No</a></div><div id="Yes_link"><a href="#">Yes</a></div>',
+    alignBottom:true,
+    closeBoxURL: ""  
+    };%>
+     
+var infowindow = new google.maps.InfoWindow({content: contentstring, width:1, height:1});
+// for the 'x', to close the infoWindow, we give it the same behaviour as the 'No' link
+google.maps.event.addListener(infowindow, 'closeclick', function() {   
+  $(".map-no-link").trigger("click");
+});  
+ 
+  
+   var marker = new google.maps.Marker({
+      map: map
+    });
+    
+    
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      var place = autocomplete.getPlace();
+      if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+      } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(11);
+      }
+      marker.setPosition(place.geometry.location);
+      $('#user_lat').val(place.geometry.location.lat());
+      $('#user_lng').val(place.geometry.location.lng());
+      $('#changed').val('1');
+
+   //   infowindow.setContent(place.name);
+      infowindow.open(map, marker);
+    });
+
+    <% if current_user.address and current_user.lat %>
+      var currentlatlng = new google.maps.LatLng(<%= current_user.lat %>, <%= current_user.lng %>);
+      var marker = new google.maps.Marker({map: map, position: currentlatlng});
+      map.setCenter(currentlatlng);
+      map.setZoom(11);
+    <% end %>
+
+  }
+
+  $(function() {
+      initialize_google_maps();
+  });
+
+</script>
+

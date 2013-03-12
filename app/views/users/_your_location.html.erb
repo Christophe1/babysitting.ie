@@ -1,0 +1,14 @@
+<div id='your_location'>
+  <%= label_tag '', your_location(@user), :class => "location-label" %>
+  <% if @user == current_user %>
+    <%= radio_button @user, :address_visible, :true, :checked => @user.address_visible, :class => "address-visible-toggle", :remote_url => address_toggle_user_path(@user) %>
+    <div id='share_label'>
+      <%= I18n.t('user.share') %>
+    </div>
+    <%= radio_button @user, :address_visible, :false, :checked => !@user.address_visible, :class => "address-visible-toggle", :remote_url => address_toggle_user_path(@user) %>
+    <div id='keep_private_label'>
+      <%= I18n.t('user.keep_private') %>
+    </div>
+    <span id="your_location_message"></span>
+  <% end %>
+</div>

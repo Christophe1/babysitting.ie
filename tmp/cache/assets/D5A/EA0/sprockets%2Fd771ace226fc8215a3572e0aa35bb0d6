@@ -1,0 +1,827 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@value"”K{"
+class"ProcessedAsset"digest"%4cfef43f28604184109327f4056ad129"lengthiä1"content_type"text/css"_version"%9f3b95dd7ea3030dc35985c0a8020862"required_paths[	"1$root/app/assets/stylesheets/application.css"1$root/app/assets/stylesheets/chosen.css.scss"Z/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/_bootstrap.scss";$root/app/assets/stylesheets/email_invitation.css.scss"dependency_paths[*{"digest"%2c1d4c40bb5e336c13efa57a31401b56"	path"b/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_layouts.scss"
+mtime"2012-10-11T20:07:54+01:00{@"%6f469392bad0865739ffb1cdd9126869@"a/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_modals.scss@"2012-10-11T20:07:54+01:00{@"%5a6a367b4e79c7617439a87e1314b8c2@"_/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_grid.scss@"2012-10-11T20:07:54+01:00{@"%d25efff67ee9a553f10e9407a84a048c@"d/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_variables.scss@"2012-10-11T20:07:54+01:00{@"%af4eab368c614d27c8a7d69422e54084@"d/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_accordion.scss@"2012-10-11T20:07:54+01:00{@"%b45614fe49fe431b1a33e38dafe7ebfa@"a/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_navbar.scss@"2012-10-11T20:07:54+01:00{@"%f7764a4a92ee84d6e1889ae6d809ac2f@"h/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_labels-badges.scss@"2012-10-11T20:07:54+01:00{@"%a82180be9a934a337c3d817a92a0aeba@"`/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_reset.scss@"2012-10-11T20:07:54+01:00{@"%15f5f7f53152c810a30524b23cd4ca82@"_/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_navs.scss@"2012-10-11T20:07:54+01:00{@"%1a3224eda3af87a2fb8d548a8593b05a@"_/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_code.scss@"2012-10-11T20:07:54+01:00{@"%6855e862334cb74d62702a03136f8d8e@"e/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_pagination.scss@"2012-10-11T20:07:54+01:00{@"%46e1543b83cbf00583f8725a3f871dd1@"b/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_buttons.scss@"2012-10-11T20:07:54+01:00{@"%b675fe21d822fbebbd5cf0aa938e398a@"_/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_type.scss@"2012-10-11T20:07:54+01:00{@"%2573cb3426bbc3906aad7ac84ac0e362@"o/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_component-animations.scss@"2012-10-11T20:07:54+01:00{@"%a9a5f19bf3cfa02df9dbf178ee862ba1@";$root/app/assets/stylesheets/email_invitation.css.scss@"2013-02-13T15:42:43+00:00{@"%d318db8d5a9cc3c909d01dd4b5496907@"h/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_progress-bars.scss@"2012-10-11T20:07:54+01:00{@"%ffe72cd261b04f92dcb2554b4c94db77@"`/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_wells.scss@"2012-10-11T20:07:54+01:00{@"%ec07d24ea725d4d472a1c1dc535ee5d2@"f/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_breadcrumbs.scss@"2012-10-11T20:07:54+01:00{@"%8e0268da8f0e0337acbcc100d5698473@"b/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_sprites.scss@"2012-10-11T20:07:54+01:00{@"%86b6f7f6154711480642f91128746a35@"c/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_popovers.scss@"2012-10-11T20:07:54+01:00{@"%720f0f2ce44287b164807d5ebd8fa74e@"d/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_utilities.scss@"2012-10-11T20:07:54+01:00{@"%ce35e3a63fa6491828aab722a30ee2d0@"`/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_forms.scss@"2012-10-11T20:07:54+01:00{@"%bb4cbc0fba34fcfb0de398c03ffe9445@"f/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_scaffolding.scss@"2012-10-11T20:07:54+01:00{@"%40d5aa88b21552c3a487a06571ccafed@"d/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_dropdowns.scss@"2012-10-11T20:07:54+01:00{@"%528334968f71c82ef8f7c7f46f1d63e0@"1$root/app/assets/stylesheets/application.css@"2013-02-26T01:24:44+00:00{@"%4296f409a3f4dff9e5fee03529cca1cf@"a/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_mixins.scss@"2012-10-11T20:07:54+01:00{@"%ca64332cede2253def71dde1a122e5ea@"a/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_tables.scss@"2012-10-11T20:07:54+01:00{@"%30b10d26181ffb464f4b491321449443@"a/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_alerts.scss@"2012-10-11T20:07:54+01:00{@"%3cabfbc5656c927045eb4b52f97cb0b4@"d/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_hero-unit.scss@"2012-10-11T20:07:54+01:00{@"%560f79e3220e94340c463bba2cea16fc@"`/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_close.scss@"2012-10-11T20:07:54+01:00{@"%6e3f679516bfe0318c9ad11224b7f2ae@"Z/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/_bootstrap.scss@"2012-10-11T20:07:54+01:00{@"%324077124597279a6c494dacfbcc4ce1@"1$root/app/assets/stylesheets/chosen.css.scss@"2013-01-17T13:33:19+00:00{@"%548a52a5c9198e586e0e7e75c821738a@"c/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_carousel.scss@"2012-10-11T20:07:54+01:00{@"%999cf3f7f3d20ae5db75f8b02abff2c0@"e/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_thumbnails.scss@"2012-10-11T20:07:54+01:00{@"%c2c741ce13453b871353c52e98d81338@"b/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_tooltip.scss@"2012-10-11T20:07:54+01:00{@"%52a55d885a9365590a34117dc93e0f2f@"h/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_button-groups.scss@"2012-10-11T20:07:54+01:00{@"%bc2dd65ffdb2eebdf77782791ff6c9a3@"`/var/lib/gems/1.8/gems/bootstrap-sass-2.0.3/vendor/assets/stylesheets/bootstrap/_pager.scss@"2012-10-11T20:07:54+01:00"pathname"1$root/app/assets/stylesheets/application.css"source"ä1/*
+
+
+
+
+*/
+
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "compass/css3";
+@import "compass/css3/border-radius";
+
+$wizardTabsBorderWidth: 5px;
+$wizardTabsBorderColor: #B7CBE9;
+$wizardTabsBorder:      $wizardTabsBorderWidth solid $wizardTabsBorderColor;
+$wizardTabWidth:        ceil(($gridRowWidth - 2 * $wizardTabsBorderWidth) / 2);
+$wizardLastTabWidth:    ($gridRowWidth - $wizardTabsBorderWidth - $wizardTabWidth);
+
+/* the header, with logo, avatar, log out et al, which is on most pages. */
+
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  background-color: #ffffff;
+  /* @include border-radius(0px 0px 7px 7px, 0px 0px 7px 7px); */
+  border-color: #eeeeee;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  z-index: 1;
+
+
+  .top-line {
+    height: 55px;
+    position: relative;
+
+
+  .populisto_logo {
+    max-width: 50%;
+    padding-top: 12px;
+    padding-left: 12px;
+   }
+
+    .brand {
+      float: left;
+      display: block;
+      position: absolute;
+      margin-top:10px;
+      left: 5px;
+      width: 250px;
+    }
+
+    .slogan {
+      float: right;
+      margin: 16px 5px 0 0;
+      font-size: 14px;
+
+      .fb-avatar {
+        width: 16px;
+        margin-right: 2px;
+      }
+    }
+
+  }
+
+  .second-line {
+
+    height: 55px;
+
+    .menu-item {
+      float: right;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    .invites-count {
+      float: left;
+      margin-top: 20px;
+      margin-left: 12px;
+    }
+
+    .user-panel {
+      float: right;
+      margin-top: 7px;
+      width: 100px;
+
+      .fb-avatar {
+        width: 30px;
+      }
+
+      .fb-logout {
+        background: none;
+        border: none;
+        outline: none;
+        color: #08C;
+      }
+
+      .fb-logout:hover {
+        text-decoration: underline;
+      }
+    }
+    @include clearfix();
+  }
+
+  @include clearfix();
+}
+
+/* css details for the list on the login - sign up page */
+.features {
+  list-style:none;
+  float: left;
+  margin: 6em 0 0 6em;
+  }
+  .features li {
+  margin: 8px 0 2em;
+  }
+ .features img {
+  float: left;
+  margin: 0px;
+  } 
+  .features p {
+  margin: 0 0 0 68px;
+  }
+  .features .title {
+  font-size: 16px;
+  margin-bottom: .3em;
+  }
+  
+  .features img2 {
+  float: right;
+  margin: 5px 0 0;
+  } 
+
+  
+  .iPad-promo {
+  width:520px;
+  list-style:none;
+  float:left;
+  border: 1px solid #ebebeb;
+  margin: 330px 0 0 -260px;
+  padding: 20px;
+  }
+  
+  .iPad-promo img {
+    float: left;
+  margin-right: 18px 
+  } 
+  
+  .iPad-promo .title {
+  font-size: 16px;
+  margin-bottom: .2em;
+  } 
+  
+  .iPad-promo p {
+  font-size: 1em;
+  } 
+  
+  .iPad-promo .img2 {
+  margin-left: 450px;
+  margin-top: -42px
+  } 
+
+
+
+
+/*Facebook login, on the home page */
+
+  .login-page {
+  margin: 30px 0px 0px 800px;
+  width: 400px;
+
+
+  .facebook-section {
+    text-align: center;
+    position: relative;
+    padding: 15px 15px 0;
+    .fb-login {
+      width: 315px;
+      margin: 15px auto;
+      display: block;
+    }
+    .fb-notes {
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    .or-devider {
+      position: absolute;
+      bottom: -36px;
+      left: 180px;
+      background-color: white;
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      @include border-radius(15px);
+      font-size: 17px;
+      line-height: 26px;
+    }
+  }
+
+
+
+
+.sign-in
+{
+  text-align: center;
+
+  p {
+    font-size: 20px;
+  }
+
+  .create-account-note {
+    color: red;
+
+    a, a:visited {
+      color: red;
+      text-decoration: underline;
+    }
+  }
+
+  .not-on-facebook-note a {
+    color: blue;
+  }
+}
+
+
+border: 
+  1px solid #eee;
+  @include border-radius(10px);
+
+}
+
+/*the yes and no links on the info box, on the google map page, straight after registration */
+#correct_area {
+font-weight: bold;
+}
+
+#no_link {
+float: left;
+font-weight: bold;
+}
+
+#yes_link {
+float: right;
+font-weight: bold;
+}
+
+  /* #header-wrap {
+    background: #ccffff;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    z-index: 1;
+  border-color: #eeeeee;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+} */
+
+/* the maps page; user selects their location */
+
+body {
+
+  background-color: #eee !important;
+  
+
+
+  > .container {
+    width: 100%;
+    padding: 0px 0 50px 0;
+  }
+
+  .page-content {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-top: 80px;
+    @include border-radius(7px, 7px);
+  }
+
+
+
+.map-page {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .greetings {
+    width: 60%;
+    margin: 10px auto 30px;
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .address-area {
+    margin: 10px auto;
+    width: 97%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    #address_autocomplete {
+      width: 60%;
+      height: 30px;
+      font-size: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+  #map_canvas {
+  height: 400px;
+  width: 600px;
+  margin-top: 0.6em;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    img {
+        max-width: none;
+    }
+  }
+
+ /* the 'Next button', on the select
+ destination page. No longer needed. 
+ #map-next-link {
+    float: right;
+  } */
+}
+
+}
+
+
+
+
+.control-group.chosen {
+  .help-inline {
+    margin-top: -20px;
+  }
+}
+
+.control-group.error {
+  .chzn-container {
+    input, input:focus {
+      border: none;
+      border-color: none;
+      @include border-radius(0);
+      @include box-shadow(none);
+    }
+  }
+
+  .chzn-container-multi .chzn-choices {
+    color: $errorText;
+    border-color: $errorText;
+  }
+}
+
+
+.find-something {
+  .greetings {
+    width: 60%;
+    margin: 5px auto;
+    text-align: center;
+  }
+
+  #map_canvas {
+    height: 380px;
+    width: 470px;
+    margin: 0 auto;
+    img {
+        max-width: none;
+    }
+  }
+
+  .search-area {
+    width: 640px;
+    margin: 10px auto;
+    .search-box {
+      margin-top: 15px;
+      .control-group.chosen {
+        float: left;
+        display: inline;
+        width: 540px;
+
+      }
+      .search-button {
+        float: right;
+        margin-right: 48px;
+      }
+    }
+  }
+
+  .area {
+
+    margin: 0 auto;
+    width: 870px;
+
+    h4 {
+      margin: 10px 0 10px 10px;
+    }
+
+    .review {
+
+      background-color: #F5F5F5;
+
+      .left-part {
+        width: 70px;
+        float: left;
+        padding: 10px;
+      }
+
+      .right-part {
+        float: left;
+        padding: 10px;
+        width: 758px;
+
+        .review-text {
+          padding: 10px 0;
+        }
+
+
+      }
+
+    }
+
+  }
+
+}
+
+.add-to-my-page {
+  float: right;
+  font-size: 10px;
+}
+
+.time-ago {
+  font-size: 10px;
+}
+
+.grey {
+  color: #777;
+}
+
+#my_films {
+  .actions {
+    padding: $baseLineHeight 0;
+    margin-bottom: $baseLineHeight;
+    background-color: $formActionsBackground;
+    border-bottom: 1px solid #ddd;
+    @include clearfix();
+  }
+}
+
+/* for FireFox */
+input.btn::-moz-focus-inner,
+button.btn::-moz-focus-inner,
+a.btn::-moz-focus-inner {
+    border : 0px;
+}
+
+/* for IE8 */
+input.btn:focus,
+button.btn:focus,
+a.btn:focus {
+    outline : none;
+}
+
+/* IE */
+.legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $baseLineHeight * 1.5;
+  font-size: $baseFontSize * 1.5;
+  line-height: $baseLineHeight * 2;
+  color: $grayDark;
+  border: 0;
+  border-bottom: 1px solid #eee;
+
+  // Small
+  small {
+    font-size: $baseLineHeight * .75;
+    color: $grayLight;
+  }
+}
+
+.legend + .control-group,
+.control-group.first {
+  margin-top: $baseLineHeight;
+  -webkit-margin-top-collapse: separate;
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+
+/* Overlay */
+#simplemodal-overlay {
+  background-color:#aaa; cursor:wait;
+}
+
+/* Container */
+#simplemodal-container {
+  width: 450px;
+  height: 300px;
+  background-color: #fff;
+  padding: 10px;
+  @include border-radius(12px);
+  
+}
+
+#review-page {
+  .review-text {
+    margin: 10px auto 30px;
+    width: 500px;
+  }
+  .review-form {
+
+    width: 410px;
+    margin: 0 auto;
+
+
+    .inputs {
+      .control-group.chosen .help-inline {
+        margin-top: 3px;
+      }
+      input, textarea, select {
+        width: 410px;
+      }
+      textarea {
+        height: 200px;
+      }
+      .review-comments-example {
+        margin-top: -10px;
+        display: block;
+        margin-bottom: 15px;
+      }
+    }
+
+    .actions {
+      width: 100px;
+      margin: 0 auto;
+      text-align: center;
+
+      input, a {
+        display: inline-block;
+      }
+      @include clearfix();
+    }
+    #review_name, #review_phone, #review_address, #review_comment{
+      width: 400px;
+    }
+
+  }
+}
+
+.perfect-review-example {
+  padding: 10px;
+}
+
+#start_text {
+  float: left;
+}
+
+
+
+  .sign-in-section {
+    background-color: #DFDFDF;
+    padding: 15px;
+    padding-top: 22px;
+    .explanation {
+      text-align: center;
+      margin: 7px;
+      font-size: 14px;
+    }
+    .inputs {
+      input.string, input.password {
+        width: 360px;
+        height: 28px;
+        font-size: 18pt;
+        padding: 15px 5px 5px 5px;
+      }
+    }
+    .actions {
+      margin-left: 30%;
+      /*text-align: right;*/
+    }
+
+    .links {
+      color: #848484;
+      text-align: center;
+      a {
+        color: #848484;
+      }
+    }
+    .links.centralized {
+      text-align: center;
+    }
+    @include border-radius(0 0 8px 8px);
+
+  }
+
+ 
+
+.users-page {
+margin-top:80px;
+  .user-info {
+
+    .your_page_label {
+      font-size: 18px;
+    }
+    .avatar {
+      height: 120px;
+      margin: 0 10px 10px 0;
+      float: left;
+    }
+    .stats {
+      width: 850px;
+      margin: 7px 0px;
+    }
+    #your_location {
+      .location-label {
+        margin-bottom: 0px;
+      }
+      .address-visible-toggle {
+        float: left;
+        margin-right: 5px;
+      }
+      #share_label, #keep_private_label {
+        float: left;
+        margin: 1px 25px 0px 0px;
+      }
+      #your_location_message{
+        color: green;
+      }
+    }
+  }
+
+  .reviews {
+    .breadcrumb {
+      position: relative;
+    }
+
+    .breadcrumb:hover {
+      border-color:  #0099CC;  
+      opacity: 0.9;
+      .edit_review_link {
+        position: absolute;
+        display: block;
+        top: 5px;
+        right: 5px;
+        color: #0099CC;
+      }
+    }  
+    .edit_review_link {
+      display: none;
+    }
+    .posted_at {
+      color: #888888;
+      font-style: italic;
+      margin: 5px 0px;
+    }    
+    .category_name{
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .comment {
+      dislay: table-row;
+      .more-info {
+        display: table-cell;
+        width: 70px;
+      }
+      .comment-content {
+        display: table-cell;
+        white-space: pre-line;
+      }
+    }
+    
+  }
+
+  .edit_review_form {
+    form {
+      margin: 0;
+    }
+    .inputs{
+      display: table-row;
+    #except_comment {
+      display: table-cell;
+      width:40%;
+    }
+    #comment{
+      padding-left: 30px;
+    }
+    }
+    #review_name, #review_phone, #review_address {
+      width: 333px;
+    }
+    select {
+      width: 343px;
+    }
+    .edit_review_info{
+      .edit-label{
+        display: block;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 195px;
+    }
+    .cancel-edit{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #0099CC;
+    }
+
+    .control-group {
+      display:inline;
+      .controls {
+        display: inherit;
+      }
+    }
+    span#address_validation {
+      color: #B94A48;
+    }
+
+    .edit_button_group{
+      margin-left: 25px;
+      .save_review{
+        float: right;
+        margin-left: inherit;
+        margin-right: -10px;
+      }
+      .delete_review {
+        float: right;
+        margin-left: inherit;
+      }
+      .keep_private_label{
+        float: right;        
+        margin: 5px 0px 0px 5px;
+      }
+      .keep_private_button{
+        float: right;
+        margin: 7px 0px 0px 25px;
+      }
+      .share_label{        
+        float: right;        
+        margin: 5px 0px 0px 5px;
+      }
+      .share_button{
+        float: right;
+        margin: 7px 0px 0px 25px;
+      }
+    }
+  }
+
+  
+
+}
+
+#popup_close {
+  position: absolute;
+  color: #0099CC;
+  top: 7px;
+  right: 15px;
+  cursor: pointer;
+}
+
+#validation {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: red;
+}
+
+.info-windows{
+color: blue;
+}
+
+.following-followers-popup {
+  .following_list,   .followers_list {
+    width: 50%;
+    float: left;
+    .followed_user {
+      .info {
+        width: 60%;
+        float: left;
+        .avatar {
+          float: left;
+        }
+        .user-name {
+          margin: 10px 0px 0px 5px;
+        }
+      }
+      .follow_form {
+        position: relative;
+        top: 11px;
+        display: inline;
+      }
+    }
+  }
+}
+
+.select-label {
+  float: right;
+  color: #A8A8A8;
+  font-style: italic;
+}
+
+.follow_form {
+  .btn {
+    width: 100px;
+  }
+}
+"
+mtime"2013-02-26T01:24:44+00:00"dependency_digest"%6eb97f4e17ae623094c836eddd09688c"logical_path"application.css:@created_atf1361841888.7183101 øË:@expires_in0

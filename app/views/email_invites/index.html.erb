@@ -1,0 +1,100 @@
+<div class='invite-popup'>
+  <div class="invite-popup-body">
+    <div id="social-icons" data-step="1" class="render-container">
+      <h2><%= I18n.t('email_invites.check_importer_header') %></h2>
+      <div id="social">
+        <% %w(gmail yahoo hotmail outlook other_email linkedin facebook).each do |type| %>
+          <div class="link-wrapper">
+            <%= hidden_field_tag 'importer', type %>
+            <%= link_to_social type %>
+          </div>
+        <% end %>
+      </div>
+      <div class="additional-text">
+        <h4><%= I18n.t('email_invites.icons_extra_text') %></h4>
+        <%= I18n.t('email_invites.icons_additional_text').html_safe %>
+      </div>
+      <div class="buttons">
+        <%= link_to I18n.t('email_invites.invite_cancel'), '#', :class => 'btn modal-popup-close' %>
+      </div>
+    </div>
+    <div id="invite-by-email" class="render-container hide"></div>
+    <div id="received-contacts" class="render-container hide"></div>
+    <div id="custom-message" class="render-container hide"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var container = {};
+
+  $('.link-wrapper').die().live('click', function() {
+    var aTag = $(this).children('a');
+    container.importer = $(this).children('input[type=hidden]').val();
+    renderFormForImporter(container.importer, aTag);
+    return false;
+  });
+
+  function renderFormForImporter(importer, aTag){
+    switch (importer) {
+      case 'gmail': case 'yahoo': case 'hotmail': case 'linkedin':
+        renderAuthWindow(aTag);
+        break;
+      case 'other_email':
+        renderOtherEmailForm();
+        break;
+      case 'outlook':
+        renderOutlookForm();
+        break;
+      case 'facebook':
+      $('#simplemodal-container').block({message: null});
+        FB.ui({
+            method: 'apprequests',
+            title: '<%= t('facebook.apprequest.title') %>',
+            message: '<%= t('facebook.apprequest.message') %>',
+            filter: ['app_non_users']
+          }, function (response) {
+              if (response == null) {
+                $('#simplemodal-container').unblock();
+              } else {
+                $.post("<%= email_invites_path %>", {sended_invites: response.to.length, importer: 'facebook'}, function(data) {
+                  $.modal.close();
+                  $('.invites-count b').html(data.invites_count);
+                  $('#messages').html('<div class="alert alert-success">' + data.message + '</div>');
+                });
+              }
+          });
+        break;
+    }
+  }
+
+  function renderAuthWindow(aTag) {
+    $('#simplemodal-container').block({message: null});
+    aTag.target = "_blank";
+    var child = window.open(aTag.prop('href'), '', 'width=600,height=600');
+    var timer = setInterval(checkChild, 500);
+
+    function checkChild() {
+      if (child.closed) {
+        $('#simplemodal-container').unblock();
+        clearInterval(timer);
+      }
+    }
+  }
+
+  function renderInvitationForm(contacts) {
+    $.post("<%= invitation_form_email_invites_path %>", { 'contacts': contacts }, function(data) {
+      showNewContent('#received-contacts', data);
+      $('#simplemodal-container').unblock();
+    });
+  }
+
+  function renderOtherEmailForm() {
+    showNewContent('#invite-by-email', "<%= j(render 'invite_by_email') %>");
+  }
+
+  function renderOutlookForm() {
+    showNewContent('#invite-by-email', "<%= j(render 'invite_by_outlook') %>");
+  }
+
+  $('input, textarea').placeholder();
+</script>

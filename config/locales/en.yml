@@ -1,0 +1,255 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    errors:
+      messages:
+        confirmation: "The Confirm Password value does not match the Password. Please enter matching values."
+  application:
+    title: "Populisto!"
+    admin_area: "Admin Area"
+    mutual_friends: "%{count} mutual friends"
+    mutual_friends_in_app: "%{count} who are in the app"
+    welcome: "Hi %{user}, you have %{friends} on Populisto! %{invitation_text} by %{email_invite_link}."
+    friend: "1 follower"
+    friends: "%{count} followers"
+    no_friends: "no followers"
+    invite_other_on: "Invite others"
+    invite_friends_on: "Invite friends"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} was created successfully."
+      destroy:
+        notice: "%{resource_name} was deleted successfully."
+      update:
+        notice: "%{resource_name} was updated successfully."
+  helpers:
+    enter_a_location: "Enter a location"
+    cant_be_blank: "can't be blank"
+    actions: "Actions"
+    time_ago: "%{time} ago"
+    user_indicator: "Hello, %{user}."
+    me: "Me"
+    your_page: "Your Page"
+    s_page: "'s Page"
+    s_area_details: "'s area details: "
+    location_hidden: "location is hidden"
+    select_all: "Select All"
+    links:
+      back: "« Back"
+      view: "View"
+      edit: "Edit"
+      new: "New"
+      destroy: "Delete"
+      save: "Save"
+      cancel: "Cancel"
+      confirmation: "Are you sure?"
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+      go_to_website: "Go to Web Site"
+      post_review: "Post a Review"
+      search: "Search"
+      clear: "Clear"
+      invite_friends: "Invite Friends"
+      add_to_my_page: "Add to My Page"
+      email: "Email"
+      facebook: "Facebook"
+      follow: "Follow"
+      following: "Following"
+      unfollow: "Unfollow"
+      share: "Share"
+      keep_private: "Keep private"
+      add_to_your_page: "Add to your page"
+      remove_from_your_page: "Remove from Your Page"
+      next: "Next"
+  wizard:
+    sign_in: "Sign in"
+    my_page: "My Populisto! Page"
+    see_friends_films: "My Populisto! Area"
+  home:
+    welcome: "Hello. Welcome to our website."
+    create_account: "create an account with us"
+    login_text: "sign in"
+    create_account_note: "(Not on Facebook? Then %{login} or %{register}.)"
+    register:
+      create_account_button: "Create Account"
+      title: "Register a new Account"
+  sign_in:
+    login_text: 'Log in to Populisto!'
+    login_notes: "- We won't automatically post to your wall<br/>- One less password to remember"
+    or: "Or"
+    sign_in_button: "LOG IN"
+    sign_up_button: "SIGN UP"
+    email_address_placeholder: 'Email Address'
+    password_placeholder: 'Password'
+    forgot_password: 'Forgot your Password?'
+    sign_up: 'Need an account?'
+    sign_in: 'Already on Populisto!? Log in now'
+    create_account_text: 'Create an account using your email address'
+  create_account:
+    first_name: "First name"
+    second_name: "Second name"
+    email_address: "Email"
+    password: "Password"
+    password_confirmation: "Confirm password"
+  layout:
+    your_page_link: 'Your Page'
+    find_something_link: 'Find Something'
+    write_smth: 'Write Something Up'
+  map:
+    yes_link: 'Yes'
+    no_link: 'No'
+    address_validation: "Address can't be blank!"
+  my_films:
+    title: "My films"
+    new_title: "Tell us about a film you have seen in the past year:"
+    edit_title: "Edit film details:"
+    film_comments: "What do you think about it?"
+    genres_hint: "Start typing to get suggestions"
+    first_film_success: "Thank you, %{user}. You can add more films if you wish. Or, see what films your friends watched."
+    duplicate_success: "Film was added successfully."
+    empty_text: "There is nothing on your Populisto! Page yet. Once you have found things or contacts of interest in your area, they will be stored here."
+  films:
+    select_genres: "Select Genres"
+    review_title: "%{user} about %{genres}"
+    empty_search_results: "No results have appeared for that search. Be a populisto and enter one yourself!"
+  map_page:
+    greetings: "Hi %{user_name}. <p><p> First, thanks for signing up! Next, please tell us where you live. We won't display this to anyone unless you want us to - if you don't want to give us your exact address details that's ok, but the more accurate you are, the more effective your results will be when searching for that buthcer, baker or candlestick maker!"
+  write_review:
+    text: 'Add something to Your Page. Think of Your Page as your personal address book.<br/><br/>A Plumber? A Doctor? A restaurant? Share it with friends to help them find something. Or store it personally for your own information'
+    submit_button: 'Post to Your Page'
+    cancel_button: 'Cancel'
+    comment_label: 'Comments - personal experience, value for money...'
+    comment_popup_link_text: 'See samples of stuff written up just perfectly'
+    perfect_example: 'Add example to translations file - en.yml'
+    close_popup_text: 'Close'
+    review_successfully_created: 'Review was successfully created'
+    categories_selector_label: 'Categories'
+    categories_selector_placeholder: 'Start typing to get suggestions'
+  find_something:
+    greetings: 'Your area is set to %{km}km around the location you gave when registering with Populisto.'
+    change_range_20: 'Change to 10km?'
+    change_range_10: 'Change to 20km?'
+    search_help: 'What are you looking for? Select from the list or start typing the name of someone to see their page.'
+    search_placeholder: 'Start typing to get suggestions.'
+    search_label: 'Category'
+    button_text: 'Go'
+    my_area_title: 'In Your Area:'
+    outside_area_title: 'Outside Your Area:'
+    my_reviews_title: 'Your Address book entries'
+    followers_reviews_title: 'Address book entries by those following you'
+    following_reviews_title: 'Address book entries by those you’re following'
+    others_reviews_title: 'Other address book entries'
+    review:
+      name: 'Name: '
+      phone: 'Phone: '
+      address: 'Address: '
+  facebook:
+    apprequest:
+      title: "Invite friends to Populisto!"
+      message: "Hey, lets share films to each other!"
+  admin:
+    sections:
+      profile: "Profile"
+      users: "Users"
+      categories: "Categories"
+      reviews: "Reviews"
+    empty_list: "There are no items to display."
+    sessions:
+      new:
+        title: "Sign in"
+    profile:
+      edit:
+        current_password_hint: "we need your current password to confirm your changes"
+        success: "User was updated successfully."
+  email_invites:
+    check_importer_header: "Let people know of Populisto! by:"
+    select_contacts_header: "Select contacts to invite"
+    custom_message_header: "Message:"
+    select_contacts_info_text: "We found <b>%{count}</b> contacts for you. Select the ones you'd like to invite to Populisto! and click the \"<b>Next</b>\" button."
+    invate_by_email_popup_header: "Invite Friends by Email"
+    invate_by_outlook_popup_header: "Invite Friends by Outlook"
+    emails_placeholder: "Enter your friends' email addresses, separated by commas"
+    textarea_placeholder: "Add a personal message"
+    invite_button: "Invite your friends"
+    invite_cancel: "Cancel"
+    already_invated: "Already invited by you"
+    contacts_select_validation: "Please select at least one contact"
+    notification_sent: "Messages were sent to your friends"
+    notification_sent_error: "Please specify valid email addresses for: "
+    token_missing: "Token must be specified"
+    friendship_confirmed: "Friend was successfully added"
+    linkedin_message: "Join Populisto today!\nClick the link below to join Populisto and become %{name}'s friend.\n\n%{link}%{custom}"
+    linkedin_custom: "\n\n%{name} left a comment for you:\n%{body}"
+    cancel_invitation: "We’re sorry to hear you’re not taking up the Invitation. You can always come back to www.populisto.com and join any time."
+    later_invitation: "We’re glad to hear you’re still thinking about joining Populisto! We'll send you a reminder email at a later stage."
+    link_accept: "Accept Invitation"
+    link_cancel: "No Thanks"
+    link_later: "Maybe Later"
+    callback_header: "We can't find any contacts for you."
+    callback_no_contacts: "You can import your contacts from another service."
+    callback_close_link: "Close this window"
+    icons_extra_text: "You’ll have full control over who you want to contact!"
+    icons_additional_text: "Each invite you send gains you a ticket for the raffle, to win an iPad. The more you send, the greater chance you have of winning.<br /><br />You can see the number of invites you've sent on the left of the screen. Winner will be announced in early June."
+    invites_sent: "You have sent <b>%{number}</b> invites"
+    outlook:
+      step1: "Please provide a .csv file with contacts. You will be able to choose the ones you want to import on the next page"
+      step1_link: "Directions to export your contacts to .csv from Outlook."
+      step2: "Choose file:"
+      step3: "Press Import contacts now to import file"
+      import_contacts: "Import contacts"
+      incorrect_file_error: "Please provide a correct file"
+      no_contacts: "You can import your contacts from another service or %{link} another file."
+      choose: "choose"
+    icon:
+      gmail: "Gmail"
+      yahoo: "Yahoo!"
+      hotmail: "Hotmail"
+      outlook: "Outlook"
+      other_email: "Other Email"
+      linkedin: "LinkedIn"
+      facebook: "Facebook"
+  mailer:
+    invite_email:
+      subject: '%{name} invites you to Populisto!'
+      header: 'Join Populisto today!'
+      body: "Hi. I'm inviting you to Populisto!, a new website that's just like the old address book we used to have in the 80s. So cool. Check it out. Makes life much easier. <br /><br />You could also be in with the chance to win an iPad.%{custom_part}"
+      custom_part: '<br/><br/>%{name} left a comment for you:<br/>%{body}'
+      clich_here_link: '<a href="%{url}">Click here</a>'
+    reminder_email:
+      subject: "%{name}’s invitation is waiting for your response."
+      body: "Hi,\n\n%{sender_name} sent you an invitation to join Populisto! %{days_count} days ago. How would you like to respond?"
+  user:
+    following: "Following"
+    followers: "Follower"
+    following_followers: "Following/Followers"
+    share: "Share"
+    keep_private: "Keep private"
+    close: "Close"
+    review:
+      category: "Category: "
+      name: "Name: "
+      address: "Address: "
+      phone: "Phone: "
+      comment: "Comment: "
+      more_info: "More info: "
+      delete: "Delete"
+      edit:
+        category: "Category"
+        name: "Name *"
+        address: "Address"
+        phone: "Phone"
+        comment: "Comment"
+        more_info: "More info"
+        cancel: "Cancel"
+        edit: "Edit"
+  follow:
+    validation: "I'm sorry, but this user is not living within your 20km area."
+  search:
+    group:
+      category: "Category"
+      followers_in: "Followers in your area"
+      following_in: "People you follow"
+      other_people: "Other people in your area"

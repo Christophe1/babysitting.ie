@@ -1,0 +1,80 @@
+<!-- This is the unordered list for the login-sign up page -->
+<ul class="features">
+  <li>
+  <img class><%= image_tag("free.png") %></img>
+  <p class="title">Free</p>
+  <p>
+  100% free on-line address book...but better.
+  </p>
+  </li>
+  <li>
+  <img class><%= image_tag("correct.png") %></img>
+  <p class="title">Reliable</p>
+  <p>Find trusted sources from people you know.</p>
+  </li>
+  <li>
+  <img class><%= image_tag("share.gif") %></img>
+  <p class="title">Share</p>
+  <p>Pop that electrician or dress maker into your <br>
+  list so others can employ them.</p>
+  </li>
+</ul>
+
+<ul class="iPad-promo">
+  <li>
+  <img class><%= image_tag("smiley.png") %></img>
+  <p class="title">And...</p>
+  <p>Be in with the chance to win an iPad! <%= link_to "Terms and conditions apply", '#', :onclick => "javascript:window.open(\"terms.html.erb\",'Terms and Conditions', 'width=300, height=600');" %>
+  <%= image_tag "ipad.png", :class => "img2" %>
+  </li>
+</ul>
+
+
+<div class="login-page">
+
+    <div class='facebook-section'>
+     <!-- <h2><%= I18n.t('sign_in.login_text') %></h2>-->
+
+      <%= fb_login_button(image_tag("Facebook-orig.png")) %>
+
+      <div class='fb-notes'>
+        <%= raw I18n.t('sign_in.login_notes') %>
+      </div>
+
+      <div class="or-devider">
+        <%= I18n.t('sign_in.or') %>
+      </div>
+
+    </div>
+
+    <div class='sign-in-section'>
+
+        <%= simple_form_for(User.new, :as => :user, :url => session_path(:user), :html => {}) do |f| %>
+
+          <div class="inputs">
+  <%= f.input_field :email, :required => false, :autofocus => true, :placeholder => I18n.t('sign_in.email_address_placeholder') %>
+            <br/>
+            <%= f.input_field :password, :required => false,  :placeholder => I18n.t('sign_in.password_placeholder') %>
+            <%= f.input :remember_me, :as => :boolean %>
+          </div>
+
+ <span class="actions">
+
+            <%= f.button :submit, I18n.t('sign_in.sign_in_button'), :class => 'btn btn-primary' %>
+
+
+            <%#= f.button :submit, I18n.t('sign_in.sign_up_button'), :class => 'btn btn-warning' %>
+            <%= link_to I18n.t('sign_in.sign_up_button'), new_user_registration_path, :class => "btn btn-warning" %>
+
+        <% end %>
+      </span>
+
+        <div class='links'>
+ <%= link_to I18n.t('sign_in.forgot_password'), new_user_password_path %>
+
+          <%#= link_to I18n.t('sign_in.sign_up'), new_user_registration_path %>
+        </div>
+
+    </div>
+
+</div>

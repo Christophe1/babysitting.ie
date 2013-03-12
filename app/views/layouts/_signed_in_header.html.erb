@@ -1,0 +1,157 @@
+<div class="header">
+
+  <div class='top-line'>
+
+ <div class="populisto_logo">
+    <%= link_to(image_tag('logo.png', :alt => t('application.title')), root_path) %>
+
+<%#user is only signed in fully when they fully register - INCLUDING ADDRESS %>
+
+    <% if current_user.registration_complete? %>
+
+        <p class="slogan">
+            <%#= friends_avatars(current_user, 4) %> <%#= welcome_text %>
+         </p>
+    <% end %>
+  </div>
+</div>
+
+
+
+  <% if current_user.registration_complete? %>
+      <div class='second-line'>
+        <div class="invites-count">
+          <%#invite counter
+          <%#= I18n.t('email_invites.invites_sent', :number => current_user.invites_count).html_safe %>
+        </div>
+
+        <div class="user-panel">
+          <%= fb_avatar(current_user)  %>
+          <%= link_button_to 'Log out', sign_out_path, :class => 'fb-logout', :method => :delete %>
+        </div>
+
+        <!-- <%= fb_login_button(image_tag("fblogin.png"), :class => 'menu-item fb-login') unless current_user.added_fb_account? %> -->
+
+        <%= link_to I18n.t('layout.write_smth'), reviews_path, :class => 'btn menu-item'  %>
+        <%= link_to I18n.t('layout.find_something_link'), find_path, :class => 'btn menu-item'  %>
+
+        <%= link_to I18n.t('layout.your_page_link'), user_path(current_user), :class => 'btn menu-item' %>
+
+      </div>
+
+
+  <% end %>
+
+      <div class='search-box'>
+      <%= simple_form_for @review, :url => search_index_path, :method => :post, :html => { :class => 'form-horizontal'} do |f| %>
+
+        <%= f.input :search_ids, :collection => @data, :as => :grouped_chosen, 
+                    :group_method => :last, :prompt => false,
+                    :input_html => { :class => 'span5', :multiple => true }, 
+                    :label => t('find_something.search_label'), 
+                    :placeholder => t('find_something.search_placeholder') %>
+
+        <%= f.button :submit, :value => t('find_something.button_text'), :class => 'btn-primary search-button' %>
+
+      <% end %>
+    </div>
+
+    <div class="clearfix"></div>
+  
+<%# if current_user.registration_complete? %>
+<!-- <div class='find-something'>
+
+  <div class="greetings"> -->
+    <%#= I18n.t('find_something.greetings', :km => @kms_range) %><br/>
+    <%#= link_to I18n.t("find_something.change_range_#{@kms_range}"), change_range_search_index_path(:current_range => @kms_range) %>
+<!--   </div> -->
+
+<%# end %>
+  <!-- <div class="search-area"> -->
+
+<!--     <div class='search-box'>
+      <%#= simple_form_for @review, :url => search_index_path, :method => :post, :html => { :class => 'form-horizontal'} do |f| %>
+
+        <%#= f.input :search_ids, :collection => @data, :as => :grouped_chosen, 
+                    :group_method => :last, :prompt => false,
+                    :input_html => { :class => 'span5', :multiple => true }, 
+                    :label => t('find_something.search_label'), 
+                    :placeholder => t('find_something.search_placeholder') %>
+
+        <%#= f.button :submit, :value => t('find_something.button_text'), :class => 'btn-primary search-button' %>
+
+      <%# end %>
+      <%# end %>
+    </div> -->
+<!-- </div> -->
+<!--     <div class="clearfix"></div>
+
+    <div id="map_canvas"></div>
+
+    <div class="clearfix"></div>
+
+  </div> -->
+
+  <%#= render 'reviews' if @reviews %>
+</div>
+
+// <script type="text/javascript">
+//   var map;
+//   var markers = [];
+
+//   function initialize_google_maps() {
+//     var currentlatlng = new google.maps.LatLng(<%= current_user.lat %>, <%= current_user.lng %>);
+//     var zoom = <%= @kms_range %> > 10 ? 10 : 11;
+//     var myOptions = {
+//         zoom: zoom,
+//         center: currentlatlng,
+//         mapTypeId: google.maps.MapTypeId.ROADMAP, // ROADMAP, SATELLITE, HYBRID
+//         streetViewControl: false
+//     };
+//     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+//     var marker = new google.maps.Marker({map: map, position: currentlatlng});
+//     map.setCenter(currentlatlng);
+//     map.setZoom(zoom);
+
+//     var circle = new google.maps.Circle({
+//         map: map,
+//         fillOpacity: 0,
+//         strokeWeight: 2,
+//         strokeOpacity: 0.7,
+//         radius: <%= @kms_range %>*1000,
+//     });
+//     circle.bindTo('center', marker, 'position');
+
+//   }
+
+//   function show_markers() {
+//     if (markers)
+//       for(i in markers) {
+//         markers[i].setMap(map);
+//       }
+//   }
+
+//   function add_marker(location) {
+//     marker = new google.maps.Marker({
+//       position: location,
+//       map: map
+//     });
+//     markers.push(marker);
+//   }
+
+//   function initialize_markers() {
+//     <% (@reviews || []).each do |r| %>
+//       <% next unless r.lat && r.lng %>
+//       position = new google.maps.LatLng(<%= r.lat %>, <%= r.lng %>);
+//       add_marker(position);
+//     <% end %>
+//   }
+
+//   $(function() {
+//     initialize_google_maps();
+//     initialize_markers();
+//     show_markers();
+//   });
+
+// </script>

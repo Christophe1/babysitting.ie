@@ -1,0 +1,5 @@
+$(".follow_form").each(function() {
+  if ($(this).attr('id') == "<%= @user.id %>") {
+    $(this).replaceWith("<%= escape_javascript(render :partial => 'users/follow_form', :locals => { :user => @user, :stats_user_id => params[:stats_user_id]}) %>");
+  }
+});

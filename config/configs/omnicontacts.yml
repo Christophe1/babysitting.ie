@@ -1,0 +1,36 @@
+development: &development
+  gmail:
+    app_id: "663497751567.apps.googleusercontent.com"
+    app_secret: "dUKN35D7ABm-a-jiGgqy8vec"
+# Yahoo and Hotmail not allows "localhost" as application url, instead use localtunnel in development
+  yahoo:
+    app_id: ""
+    app_secret: ""
+  hotmail:
+    app_id: ""
+    app_secret: ""
+
+staging: &staging
+  gmail:
+    app_id: "663497751567-o7f4f3b69b1rkknq99g7c0hgd11gfnih.apps.googleusercontent.com"
+    app_secret: "aKRWzuU2B6yFeyFhrZdOic3J"
+  yahoo:
+    app_id: "dj0yJmk9WmFpWHhSUjB3YUh1JmQ9WVdrOU5GUkhTRms0TldVbWNHbzlNVGd6TkRRM05qYzJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD03NA--"
+    app_secret: "f637c42bf74a98ea3c763d11648e324719aef7eb"
+  hotmail:
+    app_id: "000000004C0DFEB4"
+    app_secret: "IxzMRI4aUUdDAc4SPBYRtbNuZUkzoypp"
+
+test:
+  <<: *development
+
+production:
+  gmail:
+    app_id: ""
+    app_secret: ""
+  yahoo:
+    app_id: ""
+    app_secret: ""
+  hotmail:
+    app_id: ""
+    app_secret: ""

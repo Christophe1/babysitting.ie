@@ -1,0 +1,2 @@
+<%= link_to I18n.t('helpers.links.following'), friend_relation_path(current_user.following?(user).first.id, :stats_user_id => stats_user_id), :method => :delete, :remote => true, :class => "btn btn-primary unfollow" %>
+

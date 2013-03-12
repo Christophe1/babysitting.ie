@@ -1,0 +1,22 @@
+<div id="other-email">
+  <h2><%= I18n.t('email_invites.invate_by_email_popup_header') %></h2>
+  <span id="validation"><%= I18n.t('helpers.cant_be_blank') %></span>
+
+  <%= form_tag email_invites_path, :method => :post, :class => '' do %>
+    <div class='email-invitation-form'>
+      <%= hidden_field_tag 'importer', 'other_email' %>
+      <%= text_field_tag :emails, '', :placeholder => I18n.t('email_invites.emails_placeholder'), :class => 'other-email' %>
+      <div class="information-text other-email">
+        <%= image_tag 'logo.jpg' %>
+        <%= I18n.t('mailer.invite_email.body', :custom_part => "").html_safe %>
+      </div>
+      <%= text_area_tag :message, '', :placeholder => I18n.t('email_invites.textarea_placeholder'), :class => 'other-email' %>
+    </div>
+
+    <div class='buttons'>
+      <%= submit_tag I18n.t('email_invites.invite_button'), :class => 'btn btn-primary' %>
+      <%= link_to I18n.t('email_invites.invite_cancel'), '#', :id => 'go-back', :class => 'btn' %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<% if reviews.present? %>
+    <div class='area'>
+      <h4><%= title %></h4>
+      <% reviews.each do |review| %>
+        <%= render 'review', :review => review %>
+      <% end %>
+    </div>
+<% end %>

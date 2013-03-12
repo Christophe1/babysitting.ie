@@ -1,0 +1,52 @@
+<h2><%= I18n.t('email_invites.select_contacts_header') %></h2>
+<div>
+  <div class="information-text">
+    <%= I18n.t('email_invites.select_contacts_info_text', :count => @contacts.count).html_safe %>
+  </div>
+  <div class='email-invitation-form'>
+    <div class="control-group">
+      <% @contacts.each do |name, value| %>
+        <div class="email">
+          <%= check_box_tag "contacts[]", value, false, :id => value %>
+          <label for="<%= value %>"><%= name %></label>
+        </div>
+      <% end %>
+      <% if @invited.present? %>
+        <h4><%= I18n.t('email_invites.already_invated') %></h4>
+        <% @invited.each do |contact, value| %>
+          <div class="invited-email">
+            <%= contact %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="buttons">
+    <div class="pull-left">
+      <%= check_box_tag "select-all" %>
+      <%= label_tag "select-all", I18n.t('helpers.select_all') %>
+    </div>
+    <div id="popup-alert" class="pull-right"></div>
+    <div class="clearfix"></div>
+    <div>
+      <div class="pull-left">
+        <%= link_to I18n.t('helpers.links.back'), '#', :class => 'back-link', :id => 'go-back' %>
+      </div>
+      <%= link_to I18n.t('helpers.links.next'), '#', :class => 'btn btn-primary', :id => 'btn-next' %>
+      <%= link_to I18n.t('email_invites.invite_cancel'), '#', :class => 'btn modal-popup-close' %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // Render form with textarea for custom message
+  $('#btn-next').click(function(e) {
+    container.contacts = $('.control-group .email input[type=checkbox]:checked');
+    if (container.contacts.length > 0) {
+      container.contacts = container.contacts.serialize();
+      showNewContent('#custom-message', "<%= j(render 'custom_message_form') %>");
+    } else {
+      $('.buttons #popup-alert').html('<span class="color-red"><%= I18n.t("email_invites.contacts_select_validation") %></div>');
+    }
+  });
+</script>

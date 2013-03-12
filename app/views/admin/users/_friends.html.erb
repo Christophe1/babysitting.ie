@@ -1,0 +1,24 @@
+<% if collection.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= User.human_attribute_name(:id) %></th>
+        <th><%= User.human_attribute_name(:external_user_id) %></th>
+        <th><%= User.human_attribute_name(:name) %></th>
+        <th><%= User.human_attribute_name(:email) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% collection.each do |item| %>
+        <tr>
+          <td><%= item.id %></td>
+          <td><%= item.external_user_id %></td>
+          <td><%= item.name %></td>
+          <td><%= item.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+ <p><%= t('admin.empty_list') %></p>
+<% end %>

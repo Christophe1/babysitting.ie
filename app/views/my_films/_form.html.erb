@@ -1,0 +1,33 @@
+<%= simple_form_for resource, :url => (resource.new_record? ? collection_path : resource_path(resource)), :html => { :class => 'form-horizontal', :id => 'my_film_form' } do |f| %>
+  <div class="legend"><%= (resource.new_record? ? t('my_films.new_title') : t('my_films.edit_title') ) %></div>
+
+  <%= f.input :genre_ids, :collection => @genres, :as => :chosen, :prompt => false,
+                 :input_html => { :class => 'span5', :multiple => true },
+                 :label => Film.human_attribute_name(:genre_ids), :placeholder => t('my_films.genres_hint') %>
+  <%= f.simple_fields_for :film do |film| %>
+    <%= film.input :name, :input_html => { :class => 'span5' } %>
+  <% end %>
+  <%= f.input :comments, :input_html => { :class => 'span5', :rows => 10 }, :label => t('my_films.film_comments') %>
+  <div class="form-actions">
+    <%= f.button :submit, t("helpers.links.save"), :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), collection_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+<%= javascript_tag do %>
+  $(function() {
+    $('#film_user_film_attributes_name').attr("autocomplete", "off").typeahead({
+      ajax: {
+        url: '/films/suggestions',
+        displayField: 'name'
+      },
+      onSelect: function(data) {
+        $('#film_user_comments').focus();
+      }
+    });
+
+    if ($.browser.msie && ($.browser.version === "7.0")) {
+      $("form .control-group:first").addClass("first");
+    }
+  });
+<% end %>

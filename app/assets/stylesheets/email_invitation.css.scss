@@ -1,0 +1,182 @@
+@import "bootstrap/mixins";
+@import "compass/css3";
+
+.invite-popup {
+
+  .color-red { color: red }
+
+  #choosed {
+    span { padding: 0 5px }
+    i {
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  #no-contacts {
+    padding: 10px 0;
+    .buttons { margin-top: 10px }
+  }
+
+  h2 {
+    border-bottom: 1px solid #ccc;
+    font-weight: normal;
+  }
+
+  .information-text {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 5px;
+
+    img {
+      display: block;
+      margin-left: -8px;
+      padding-bottom: 15px;
+      zoom: 0.7;
+    }
+    &.other-email {
+      border-top: 1px solid #ccc;
+      margin-top: -2px;
+      overflow: hidden;
+      img {
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .control-group {
+    max-height: 270px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .email {
+      padding: 2px 5px;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+
+    .invited-email {
+      padding: 2px 5px;
+      color: #999;
+      cursor: default;
+    }
+  }
+
+  .step {
+    padding: 5px 0;
+
+    .number {
+      font-weight: bold;
+    }
+  }
+
+  .email-invitation-form {
+
+    input, textarea {
+      width: 515px;
+    }
+
+    input.other-email { margin-top: 7px }
+
+    textarea {
+      height: 250px;
+    }
+
+    textarea.other-email { height: 210px }
+
+  }
+
+  .buttons {
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+
+    .back-link {
+      font-size: 14px;
+      padding-top: 6px;
+    }
+
+    input, a {
+      float: right;
+      margin-left: 10px;
+    }
+
+    #select-all {
+      float: left;
+      margin: 3px 5px;
+    }
+  }
+
+  input[type=checkbox] {
+    width: auto;
+  }
+
+  label {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  #social { text-align: center }
+
+  #social-icons .additional-text {
+    padding: 10px 10px 20px 10px;
+    h4 {
+      font-size: 20px;
+      font-weight: normal;
+      padding-bottom: 15px;
+    }
+  }
+
+  .link-wrapper {
+    display: inline-block;
+    margin: 10px 3px;
+    text-align: center;
+    width: 65px;
+  }
+
+}
+
+.sn-icon {
+    background: url(sn-sprite.jpg) no-repeat 0 0;
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 60px;
+
+    &:hover { @include opacity(0.7) }
+}
+
+.sn-text {
+  color: #484848;
+  font-size: 11px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.gmail { background-position: -60px 0 }
+.yahoo { background-position: -120px 0 }
+.hotmail { background-position: -180px 0 }
+.outlook { background-position: -240px 0 }
+.other_email { background-position: -300px 0 }
+.linkedin { background-position: -360px -60px }
+
+.modal-body {
+    max-height: 350px;
+    padding: 15px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+ }
+
+.modal {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    left: 3%;
+    width: auto;
+    margin: 0;
+}
+.modal-body {
+    height: 60%;
+}

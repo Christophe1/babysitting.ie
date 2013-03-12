@@ -1,0 +1,18 @@
+<table width="100%" height="100" cellpadding="10" style="padding-top:10px;border-top:solid 1px #DDDDDD">
+  <tr>
+    <td>
+      <% custom_part = @custom_text.blank? ? '' : I18n.t('mailer.invite_email.custom_part',
+                                                    :name => @from_user.front_name,
+                                                    :body => h(@custom_text) ) %>
+      <%= raw I18n.t('mailer.invite_email.body', :custom_part => custom_part) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <% link_style = "display:inline-block;font-size:13px;padding:5px 10px 5px 10px;text-decoration:none;" %>
+      <%= link_to I18n.t("email_invites.link_accept"), confirm_email_invites_url(:token => @token, :answer => 'accept'), :style => "#{link_style}background:#4D90FE;border:1px solid #3079ED;color:#ffffff", :target => "_blank" %>
+      <%= link_to I18n.t("email_invites.link_cancel"), confirm_email_invites_url(:token => @token, :answer => 'cancel'), :style => "#{link_style}color:red", :target => "_blank" %>
+      <%= link_to I18n.t("email_invites.link_later"), confirm_email_invites_url(:token => @token, :answer => 'later'), :style => link_style, :target => "_blank" %>
+    </td>
+  </tr>
+</table>

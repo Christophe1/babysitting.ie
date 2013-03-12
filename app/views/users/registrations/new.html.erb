@@ -1,0 +1,79 @@
+<!-- This is the unordered list for the login-sign up page -->
+<ul class="features">
+  <li>
+  <img class><%= image_tag("free.png") %></img>
+  <p class="title">Free</p>
+  <p>
+  100% free on-line address book...with a twist.
+  </p>
+  </li>
+  <li>
+  <img class><%= image_tag("correct.png") %></img>
+  <p class="title">Reliable</p>
+  <p>Find trusted sources from people you know.</p>
+  </li>
+  <li>
+  <img class><%= image_tag("share.gif") %></img>
+  <p class="title">Share</p>
+  <p>Pop that electrician or dress maker into your <br>
+  list so others can employ them.</p>
+  </li>
+</ul>
+
+<ul class="iPad-promo">
+  <li>
+  <img class><%= image_tag("smiley.png") %></img>
+  <p class="title">And...</p>
+  <p>Be in with the chance to win an iPad! <%= link_to "Terms and conditions apply", '#', :onclick => "javascript:window.open(\"http://www.rosk.com\",'Terms and Conditions', 'width=300, height=600');" %>
+  <%= image_tag "ipad.png", :class => "img2" %>
+  </li>
+</ul>
+
+
+
+<div class="login-page">
+
+    <div class='facebook-section'>
+      <!--<h2><%= I18n.t('sign_in.login_text') %></h2>-->
+
+      <%= fb_login_button(image_tag("Facebook-orig.png")) %>
+
+      <div class='fb-notes'>
+        <%= raw I18n.t('sign_in.login_notes') %>
+      </div>
+
+      <div class="or-devider">
+        <%= I18n.t('sign_in.or') %>
+      </div>
+
+    </div>
+
+    <div class='sign-in-section'>
+
+        <div class="explanation">
+          <%= I18n.t('sign_in.create_account_text') %>
+        </div>
+
+        <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => ''}) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="inputs">
+ <%= f.input_field :first_name, :required => true, :autofocus => true, :placeholder => I18n.t('create_account.first_name') %>
+            <%= f.input_field :last_name, :required => true, :placeholder => I18n.t('create_account.second_name') %>
+            <%= f.input_field :email, :required => true, :placeholder => I18n.t('create_account.email_address') %>
+            <%= f.input_field :password, :required => true, :placeholder => I18n.t('create_account.password') %>
+            <%= f.input_field :password_confirmation, :required => true, :placeholder => I18n.t('create_account.password_confirmation') %>
+          </div>
+
+          <div class="actions">
+            <%= f.button :submit, I18n.t('home.register.create_account_button'), :class => 'btn btn-warning' %>
+          </div>
+        <% end %>
+
+        <div class='links centralized'>
+          <%= link_to I18n.t('sign_in.sign_in'), new_user_session_path %>
+        </div>
+
+    </div>
+
+</div>

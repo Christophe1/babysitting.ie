@@ -1,0 +1,25 @@
+<div class="users-page">
+
+  <div class="user-info">
+
+    <div class = "avatar">
+      <%= fb_avatar(@user) %>
+    </div>
+    <%= label_tag I18n.t('helpers.your_page'), your_page(@user), :class => 'your_page_label' %>
+
+    <%= render 'follow_form', :user => @user %>
+    <%= render 'stats', :user => @user, :stats_user_id => @user.id %>
+
+    <%= render 'your_location' %>
+
+    <div class="clearfix"></div>
+
+  </div>
+
+  <div class="reviews" >
+      <% @reviews.each do |review| %>
+      <%= review_block review %>
+      <% end %>
+  </div>
+
+</div>

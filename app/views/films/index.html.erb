@@ -1,0 +1,19 @@
+<div class="form-actions">
+  <%= link_to t('helpers.links.post_review'), new_my_film_path, :class => 'btn btn-primary' %>
+</div>
+
+<%= form_tag films_path, :method => :get, :class => 'form-inline', :id => 'film_filter_form' do %>
+  <%= select_tag :by_genre, options_from_collection_for_select(@genres, :id, :name, params[:by_genre]), :multiple => true, :class => 'chosen', :placeholder => t('films.select_genres') %>
+  <%= submit_tag t('helpers.links.search'), :class => 'btn btn-primary' %>
+  <%= link_to t('helpers.links.clear'), films_path, :class => 'btn' %>
+<% end %>
+
+<div id="films" class="well">
+  <% if @film_users.present? %>
+    <%= render(:partial => 'films/film_user', :collection => @film_users) %>
+  <% else %>
+    <p class="grey"><%= t('films.empty_search_results') %></p>
+  <% end %>
+</div>
+
+<%= will_paginate(@film_users) %>

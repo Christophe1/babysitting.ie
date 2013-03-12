@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      film_user: "Film"
+    attributes:
+      user:
+        email: "Email"
+        name: "Name"
+        provider: "Provider"
+        external_user_id: "External User ID"
+        facebook_friends: "Facebook Friends"
+      genre:
+        name: "Name"
+      film:
+        name: "Name"
+        genre_ids: "Genres"
+      film_user:
+        name: "Name"

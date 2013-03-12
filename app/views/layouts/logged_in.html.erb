@@ -1,0 +1,16 @@
+<% content_for(:body) do %>
+  <div id="wizard">
+    <ul class="tabs">
+      <%= step_tab(:my_page, my_films_path) %>
+      <%= step_tab(:see_friends_films, films_path) %>
+    </ul>
+
+    <div class="container">
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render :file => "layouts/application" %>

@@ -1,0 +1,20 @@
+<p>
+  <strong><%= Film.human_attribute_name(:genres) %>:</strong><br>
+  <%= my_film.genres_list %>
+</p>
+<p>
+  <strong><%= Film.human_attribute_name(:name) %>:</strong><br>
+  <%= my_film.film.name %>
+</p>
+<p>
+  <%= time_ago(my_film.updated_at) %>
+</p>
+<p>
+  <strong><%= FilmUser.human_attribute_name(:comments) %>:</strong><br>
+  <%= text_area_to_html(my_film.comments) %>
+</p>
+
+<div class="actions">
+  <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_resource_path(my_film), :class => 'btn' %>
+  <%= link_button_to t('.destroy', :default => t("helpers.links.destroy")), resource_path(my_film), :method => 'delete', :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger' %>
+</div>

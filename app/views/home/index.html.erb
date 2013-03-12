@@ -1,0 +1,13 @@
+<div class="sign-in">
+
+  <p><%= t('home.welcome') %></p>
+
+  <% if OAUTH_CONFIG['facebook'] %>
+    <p><%= fb_login_button(image_tag("fblogin.png")) %></p>
+  <% end %>
+
+  <p class="create-account-note"><%=raw t('home.create_account_note',
+                                          :register => link_to(t('home.create_account'), new_user_registration_path, :class => 'coming-soon'),
+                                          :login    => link_to(t('home.login_text'), login_path)) %></p>
+
+</div>

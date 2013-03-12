@@ -1,0 +1,13 @@
+<% if @breadcrumbs %>
+  <ul class="breadcrumb">
+    <% @breadcrumbs.each_with_index do |crumb, index| %>
+      <% if crumb[:url] and index < @breadcrumbs.length - 1 %>
+        <li>
+          <a href="<%= crumb[:url] %>"><%= crumb[:title].to_s.humanize %></a> <span class="divider">/</span>
+        </li>
+      <% else %>
+        <li class="active"><%= crumb[:title].to_s.humanize %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

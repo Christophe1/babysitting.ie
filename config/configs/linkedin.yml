@@ -1,0 +1,14 @@
+development:
+  app_id: "olmdtkj7sdxl"
+  app_secret: "pYMqO3M4xhg26qhQ"
+
+staging: &staging
+  app_id: "kc16np03s2a2"
+  app_secret: "SfkcE7JJbtlnMVI0"
+
+test:
+  <<: *staging
+
+production:
+  app_id: ""
+  app_secret: ""

@@ -1,0 +1,12 @@
+<div class="form-actions">
+  <%= link_to t('helpers.links.post_review'), new_resource_path, :class => 'btn btn-primary' %>
+</div>
+
+<div class="well" id="my_films">
+  <% if collection.present? %>
+    <%= render :partial => 'my_film', :collection => collection %>
+    <%= will_paginate(collection) %>
+  <% else %>
+    <p class="grey"><%= t('my_films.empty_text') %></p>
+  <% end %>
+</div>

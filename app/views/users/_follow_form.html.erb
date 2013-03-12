@@ -1,0 +1,9 @@
+<% unless user == current_user %>
+  <div class="follow_form" id="<%= user.id%>">
+    <% if current_user.following?(user).first %>
+        <%= render 'users/unfollow', :user => user, :stats_user_id => @user.id %>
+    <% else %>
+        <%= render 'users/follow', :user => user, :stats_user_id => @user.id  %>
+    <% end %>
+  </div>
+<% end %>

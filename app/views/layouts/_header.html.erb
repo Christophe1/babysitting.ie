@@ -1,0 +1,3 @@
+<%= render(user_signed_in? ? '/layouts/signed_in_header' : '/layouts/signed_out_header') %>
+
+<%#= render((user_signed_in? && controller.action_name != 'map') ? '/layouts/signed_out_header' : '/layouts/signed_in_header') %>

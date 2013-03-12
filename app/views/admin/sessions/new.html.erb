@@ -1,0 +1,17 @@
+<div class="centred-block">
+  <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :id => 'sign_in' }, :wrapper => :light) do |f| %>
+    <legend><%= t('.title') %></legend>
+
+    <%= f.input :email, :input_html => { :class => 'input-xxlarge' }, :placeholder => User.human_attribute_name(:email) %>
+    <%= f.input :password, :input_html => { :class => 'input-xxlarge' }, :placeholder => User.human_attribute_name(:password) %>
+
+    <% if devise_mapping.rememberable? -%>
+      <%= f.input :remember_me, :as => :boolean, :label => false, :inline_label => true %>
+    <% end -%>
+
+    <div class="form-actions">
+      <%= f.submit t('helpers.links.sign_in'), :class => 'btn btn-primary' %>
+      <%= link_to t('helpers.links.cancel'), root_path, :class => 'btn' %>
+    </div>
+  <% end %>
+</div>

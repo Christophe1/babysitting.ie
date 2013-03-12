@@ -1,0 +1,7 @@
+<% my_area_reviews, outside_area_reviews = grouped_and_sorted_by_distance(@reviews) %>
+<% my_reviews, followers_reviews, following_reviews, others_reviews = grouped_by_owner(my_area_reviews)  if my_area_reviews.present?%>
+
+<%= render 'grouped_reviews', :reviews => my_reviews, :title => t('find_something.my_reviews_title') %>
+<%= render 'grouped_reviews', :reviews => followers_reviews, :title => t('find_something.followers_reviews_title') %>
+<%= render 'grouped_reviews', :reviews => following_reviews, :title => t('find_something.following_reviews_title') %>
+<%= render 'grouped_reviews', :reviews => others_reviews, :title => t('find_something.others_reviews_title') %>

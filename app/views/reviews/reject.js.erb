@@ -1,0 +1,1 @@
+$('#remove_from_your_page_<%=@review.id%>').replaceWith("<%= escape_javascript(render :partial => 'reviews/add_to_your_page', :locals => { :review => @review }) %>");

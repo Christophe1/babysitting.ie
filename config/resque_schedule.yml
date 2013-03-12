@@ -1,0 +1,6 @@
+# Syntax for EST TimeZone - "59 23 * * * US/Eastern"
+email_invites_reminder:
+  cron: "0 0 * * * US/Eastern"
+  class: EmailInvitesReminder
+  args:
+  description: Send reminder emails

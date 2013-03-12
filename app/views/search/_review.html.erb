@@ -1,0 +1,31 @@
+<div class="review breadcrumb" id="review_<%=review.id%>">
+
+  <div class="left-part">
+    <%= fb_avatar(review.user) %>
+  </div>
+
+  <div class="right-part">
+    <p>
+      <%= link_to review.user.front_name, user_path(review.user) %> / <%= review.categories_list %>
+    </p>
+    <p>
+      <%= t('find_something.review.name') %><%= review.name %>
+    </p>
+    <p>
+      <%= t('find_something.review.address') %><%= review.address %>
+    </p>
+    <p>
+      <%= t('find_something.review.phone') %><%= review.phone %>
+    </p>
+    
+    <div class="review-text">
+      <%= review.comment %>
+    </div>
+    <%= render 'reviews/add_to_your_page', :review => review  unless current_user == review.user %>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <hr style="margin: 0 30px;"/>
+
+</div>

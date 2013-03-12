@@ -1,0 +1,264 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery.blockUI
+//= require chosen.jquery
+//= require bootstrap-transition
+//= require bootstrap-alert
+//= require bootstrap-button
+//= require bootstrap-carousel
+//= require bootstrap-collapse
+//= require bootstrap-dropdown
+//= require bootstrap-modal
+//= require bootstrap-scrollspy
+//= require bootstrap-tab
+//= require bootstrap-tooltip
+//= require bootstrap-popover
+//= require typeahead
+//= require jquery.simplemodal.1.4.2.min
+//= require jquery.placeholder.min
+//= require jquery-fileupload/basic
+
+$(function() {
+    $.extend($.blockUI.defaults.css, {
+        backgroundColor: 'transparent',
+        border: 'none',
+        opacity: '0.4'
+    });
+
+    $.extend($.blockUI.defaults.overlayCSS, {
+        backgroundColor: '#ccc',
+        opacity: '0.4'
+    });
+
+    $.blockUI.defaults.message = '<img src="/assets/ajax-loader.gif" alt="Loading ..." />';
+
+    $("select.chosen").each(function () {
+        $(this).attr('data-placeholder', $(this).attr('placeholder'));
+    }).chosen().change(function (event, object) {
+        if (object.selected && object.selected.match("^user_")) {
+            window.location.href = object.selected.replace('user_', '/users/');
+        }
+    });
+
+    $('a.fb-login').click(function(e) {
+        e.preventDefault();
+
+        $.blockUI();
+        var link = $(this);
+
+        FB.login(function(response) {
+            if (response && response.authResponse) {
+                $.ajax({
+                    url: link.attr('href'),
+                    method: 'POST',
+                    data: { signed_request: response.authResponse.signedRequest },
+                    complete: function() {
+                        $("#wizard").unblock();
+                    }
+                })
+            }
+            else {
+                $.unblockUI();
+            }
+        },{
+            scope: link.data('scope')
+        });
+    });
+
+    $('a.fb-logout').click(function(e) {
+        FB.logout();
+    });
+
+    var rails = $.extend($.rails, {
+        buttonClickSelector: 'button[data-confirm], button[data-method], button[data-remote], button[data-disable-with]',
+        buttonDisableSelector: 'button[data-disable-with]',
+
+        href: function(element) {
+            return element.attr('href') || element.data('url');
+        }
+    });
+
+    $(document).delegate(rails.buttonClickSelector, 'click.rails', function(e) {
+      var button = $(this), method = button.data('method'), data = button.data('params');
+      if (!rails.allowAction(button)) return rails.stopEverything(e);
+
+      if (button.is(rails.buttonDisableSelector)) rails.disableElement(button);
+
+      if (button.data('remote') !== undefined) {
+        if ( (e.metaKey || e.ctrlKey) && (!method || method === 'GET') && !data ) { return true; }
+
+        if (rails.handleRemote(button) === false) { rails.enableElement(button); }
+        return false;
+
+      } else if (button.data('method')) {
+        rails.handleMethod(button);
+        return false;
+      }
+    });
+
+
+    $('#address_autocomplete').live('keypress', function() {
+        var key;
+        if(window.event)
+          key = window.event.keyCode;
+        else
+          key = e.which;
+       return (key != 13);
+    });
+
+    $('.map-yes-link').live('click', function(e) {
+        e.preventDefault();
+    
+            $('#address_form').submit();
+
+             });
+    
+    $('.map-no-link').live('click', function(e) {
+        e.preventDefault();
+
+            $('#address_autocomplete').val('').focus();
+            $('#user_lat').val('');
+            $('#user_lng').val('');
+            $('#user_city').val('');
+            $('#changed').val('0');
+            initialize_google_maps();
+    
+    });
+
+    $('.email-invite-link').click(function(e) {
+        e.preventDefault();
+        $('html').block();
+        $.get("/email_invites/", function(data){
+            $('html').unblock();
+            // create a modal dialog with the data
+            $(data).modal({
+                position: ["15%",],
+                padding:10,
+                onShow: function () {
+                    $('#simplemodal-container').css({width: '525px', left: ($('body').width() - 525)/2 + 'px'});
+                }
+            });
+        });
+    });
+
+    $('.modal-popup-close').live('click', function(e) {
+        e.preventDefault();
+        $.modal.close();
+    });
+
+    $('.following_followers').live('click', function(e) {
+        e.preventDefault();
+
+        $.get($(this).attr('remote_url'), function(data) {
+            $(data).modal({
+                position: ["15%",],
+                padding:10,
+                onShow: function () {
+                    $('.simplemodal-wrap').css({height:'90%',marginTop:'20px'});
+                }
+            });
+        });
+    });
+
+    $('.breadcrumb').hover(
+      function() {
+        $(this).addClass("hover");
+      },
+      function() {
+        $(this).removeClass("hover");
+      }
+    );
+
+    $('.address-visible-toggle').live('click', function(e) {
+      e.preventDefault();
+
+      $.get($(this).attr('remote_url'), { value: $(this).attr('value') } , function(){
+          $('#your_location_message').html('Saved').fadeOut("slow");
+      });
+    });
+
+    $(".invite-popup form").live("submit",function() {
+      email_input = $("#emails");
+      if (email_input.val().replace( /\s/g,'') == '') {
+        $("#validation").css({display: 'inline'});
+        return false;
+      }
+    });
+
+    $('.follow_form a.unfollow').live('hover', function(e) {
+      if (e.type == 'mouseenter')
+        $(this).removeClass("btn-primary").addClass("btn-danger").html("<%= I18n.t('helpers.links.unfollow') %>");
+      else
+        $(this).removeClass("btn-danger").addClass("btn-primary").html("<%= I18n.t('helpers.links.following') %>");
+    });
+
+    $('.follow_form a.invalid-follow').live('click', function(){
+        alert("<%= I18n.t('follow.validation') %>");
+    });
+
+    $('.add-to-your-page').live('click', function(e) {
+        e.preventDefault();
+        $.get($(this).attr('remote_url'));
+    });
+
+    $('.remove-from-your-page').live('click', function(e) {
+        e.preventDefault();
+        $.get($(this).attr('remote_url'));
+    });
+
+    $('#go-back').live('click', function(){
+        var currentContainer = $(this).closest('.render-container');
+        var step = currentContainer.data('step');
+        currentContainer.data('step', null).hide();
+        $('.render-container').each(function(){
+            var self = $(this);
+            if (self.data('step') == (step - 1)) {
+                self.show();
+            }
+        });
+    });
+
+    // Select All checkbox trigger
+    $('.control-group input[type=checkbox]').live('click', function() {
+        $('.buttons #popup-alert').html('');
+        var checkbox = $("input[type=checkbox]#select-all");
+        if ($('.control-group input[type=checkbox]').length == $('.control-group input[type=checkbox]:checked').length) {
+            checkbox.prop('checked', true);
+        } else {
+            checkbox.prop('checked', false);
+        }
+    });
+
+    // Select/unselect all checkboxes
+    $('#select-all').live('click', function() {
+        $('.buttons #popup-alert').html('');
+        var checked = $("input[type=checkbox]#select-all").is(':checked');
+        $('.control-group .email input[type=checkbox]').each(function(){
+            $(this).prop('checked', checked);
+        });
+    });
+
+    // Function to get the Max value in Array
+    Array.max = function( array ){
+        return Math.max.apply( Math, array );
+    };
+
+});
+
+function showNewContent(container, content) {
+    var toShow = $('.invite-popup-body ' + container);
+    var step = 1;
+    var steps = $('.render-container').map(function(){
+                        return $(this).data('step')
+                    });
+    var lastStep = Array.max(steps);
+
+    $('.render-container').each(function(){
+        var self = $(this);
+        if (self.data('step') == lastStep) {
+            self.hide();
+            toShow.data('step', lastStep + 1);
+            toShow.html(content).show();
+        }
+    });
+}

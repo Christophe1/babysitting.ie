@@ -1,0 +1,12 @@
+<div class="followed_user">
+  <div class="info">
+    <div class="avatar">
+      <%= fb_avatar(user) %>
+    </div>
+    <div class="user-name">
+      <%= link_to "#{user.first_name} #{user.last_name}", user %>
+    </div>
+  </div>
+  <%= render 'follow_form', :user => user %>
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,5 @@
+<%= link_to I18n.t('helpers.links.remove_from_your_page'), '#', 
+            :confirm => I18n.t('helpers.links.confirmation'), 
+            :remote_url => reject_review_path(review),
+            :class => 'btn btn-danger remove-from-your-page', 
+            :id => "remove_from_your_page_#{review.id}" %>

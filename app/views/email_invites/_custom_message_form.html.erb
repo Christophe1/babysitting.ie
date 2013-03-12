@@ -1,0 +1,30 @@
+<h2><%= I18n.t('email_invites.custom_message_header') %></h2>
+<div>
+  <div class="information-text">
+    <%= image_tag 'logo.jpg' %>
+    <%= I18n.t('mailer.invite_email.body', :custom_part => "").html_safe %>
+  </div>
+  <div class="email-invitation-form">
+    <%= text_area_tag :message, '', :placeholder => I18n.t('email_invites.textarea_placeholder') %>
+  </div>
+</div>
+<div class="buttons">
+  <div class="pull-left">
+    <%= link_to I18n.t('helpers.links.back'), '#', :class => 'back-link', :id => 'go-back' %>
+  </div>
+  <%= link_to I18n.t('email_invites.invite_button'), '#', :class => 'btn btn-primary', :id => "form-submit" %>
+  <%= link_to I18n.t('email_invites.invite_cancel'), '#', :class => 'btn modal-popup-close' %>
+</div>
+
+<script type="text/javascript">
+  // Submit form with parameters
+  $('#form-submit').die().live('click', function(e) {
+    $('#simplemodal-container').block();
+    var params = container.contacts + '&importer=' + container.importer + '&message=' + $('#message').val();
+    $.post("<%= email_invites_path %>", params, function(data) {
+      $.modal.close();
+      $('.invites-count b').html(data.invites_count);
+      $('#messages').html('<div class="alert alert-success">' + data.message + '</div>');
+    });
+  });
+</script>
