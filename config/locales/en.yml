@@ -7,7 +7,7 @@ en:
       messages:
         confirmation: "The Confirm Password value does not match the Password. Please enter matching values."
   application:
-    title: "Populisto!"
+    title: "Babysitting.ie"
     admin_area: "Admin Area"
     mutual_friends: "%{count} mutual friends"
     mutual_friends_in_app: "%{count} who are in the app"

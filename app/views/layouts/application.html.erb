@@ -21,7 +21,7 @@
     <%= render :partial => 'layouts/header' if user_signed_in? && current_user.registration_complete?%>
     <%= render :partial => 'layouts/messages' if user_signed_in? %>
     <div class='page-content'>
-        <%= content_for?(:body) ? yield(:body) : yield %>
+        <%= content_for?(:body) ? yield(:body) : yield unless current_user.registration_complete?%>
     </div>
 
   </div>

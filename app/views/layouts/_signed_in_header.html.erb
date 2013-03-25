@@ -32,10 +32,10 @@
 
         <!-- <%= fb_login_button(image_tag("fblogin.png"), :class => 'menu-item fb-login') unless current_user.added_fb_account? %> -->
 
-        <%= link_to I18n.t('layout.write_smth'), reviews_path, :class => 'btn menu-item'  %>
-        <%= link_to I18n.t('layout.find_something_link'), find_path, :class => 'btn menu-item'  %>
+        <%#= link_to I18n.t('layout.write_smth'), reviews_path, :class => 'btn menu-item'  %>
+        <%#= link_to I18n.t('layout.find_something_link'), find_path, :class => 'btn menu-item'  %>
 
-        <%= link_to I18n.t('layout.your_page_link'), user_path(current_user), :class => 'btn menu-item' %>
+        <%#= link_to I18n.t('layout.your_page_link'), user_path(current_user), :class => 'btn menu-item' %>
 
       </div>
 
@@ -43,17 +43,17 @@
   <% end %>
 
       <div class='search-box'>
-      <%= simple_form_for @review, :url => search_index_path, :method => :post, :html => { :class => 'form-horizontal'} do |f| %>
+      <%#= simple_form_for @review, :url => search_index_path, :method => :post, :html => { :class => 'form-horizontal'} do |f| %>
 
-        <%= f.input :search_ids, :collection => @data, :as => :grouped_chosen, 
+        <%#= f.input :search_ids, :collection => @data, :as => :grouped_chosen, 
                     :group_method => :last, :prompt => false,
                     :input_html => { :class => 'span5', :multiple => true }, 
                     :label => t('find_something.search_label'), 
                     :placeholder => t('find_something.search_placeholder') %>
 
-        <%= f.button :submit, :value => t('find_something.button_text'), :class => 'btn-primary search-button' %>
+        <%#= f.button :submit, :value => t('find_something.button_text'), :class => 'btn-primary search-button' %>
 
-      <% end %>
+      <%# end %>
     </div>
 
     <div class="clearfix"></div>
